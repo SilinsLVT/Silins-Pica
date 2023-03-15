@@ -5,12 +5,10 @@ package picerija;
 public class Picas_pircejs {
 
 	private String vards;
-	private int telNr;
-//	private String kadPic;
-//	private String cikPic;
+	private String telNr;
 	private String adrese;
 	
-	public Picas_pircejs(String vards, int telNr,String adrese){
+	public Picas_pircejs(String vards, String telNr,String adrese){
 		this.vards = vards;
 		this.telNr = telNr;
 		this.adrese = adrese;
@@ -28,10 +26,15 @@ public class Picas_pircejs {
 	public String dabutvardu(){
 		return vards;
 	}
-	public int dabuttelNr(){
+	public String dabuttelNr(){
 		return telNr;
 	}
 	public String dabutadresi(){
 		return adrese;
 	}
+	public String izvadit(){
+		 return "Vards: "+dabutvardu()
+		 +"\nTelefona nummurs: "+dabuttelNr()
+		 +"\nAdrese: "+dabutadresi();
+}
 }

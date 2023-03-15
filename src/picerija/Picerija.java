@@ -42,8 +42,20 @@ public class Picerija {
 						"Par piegādi", JOptionPane.QUESTION_MESSAGE, null, atbilde, atbilde[0]);
 				izveletaisIndekss = Arrays.asList(atbilde).indexOf(izvele);
       			boolean pakal = (izveletaisIndekss==0) ? false : true;
-      			
-      			JOptionPane.showMessageDialog(null, pakal);
+      			if(pakal==false){
+      				
+      				String[] pilsetas = {"Liepaja", "Grobiņa", "Cimdinieki"};
+      				String pilIzvele;
+      				pilIzvele = (String)JOptionPane.showInputDialog(null,"Izvelies pilsētu, uz kuru gribi lai piegādā picu!" , "Pilsētas izvēle",JOptionPane.QUESTION_MESSAGE,null,pilsetas,pilsetas[2]);
+      				
+      				adrese = JOptionPane.showInputDialog("Labi, kāda ir jūsu adrese?");
+      				
+      				JOptionPane.showMessageDialog(null, "Tātad, veiksim piegādi uz "+pilIzvele+" "+adrese+" ielas", "Informācija",JOptionPane.INFORMATION_MESSAGE);
+      			}else{
+      				
+      				
+      				
+      			}
 				
 				
 				

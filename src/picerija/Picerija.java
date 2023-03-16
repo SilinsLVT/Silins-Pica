@@ -5,6 +5,11 @@ import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 public class Picerija {
+	
+//	static double reiz(String exDz, int mult) {
+//	    double num = Double.parseDouble(exDz);
+//	    return num * mult;
+//	}
 
 	public static void main(String[] args) {
 		
@@ -49,7 +54,7 @@ public class Picerija {
       			String pilIzvele;
       			pilIzvele = (String)JOptionPane.showInputDialog(null,"Izvelies pilsētu, uz kuru gribi lai piegādā picu!" ,
       					"Pilsētas izvēle",JOptionPane.QUESTION_MESSAGE,null,pilsetas,pilsetas[2]);
-      			cena = cena+10;
+      			
       			
       				do{
       			adrese = JOptionPane.showInputDialog("Labi, kāda ir jūsu adrese?");
@@ -67,7 +72,7 @@ public class Picerija {
       					"Picas izvēle",JOptionPane.QUESTION_MESSAGE,null,picas,picas[4]);
       			
       			
-      			int cenaPic;
+      			int cenaPic=0;
       			
       			if(picIzvele=="Siera picu"){
       				cenaPic=4;
@@ -91,7 +96,7 @@ public class Picerija {
       			
       			
       			
-      			int cenaPicLiel;
+      			int cenaPicLiel=0;
       			
       			if(picLIzvele=="Mazā ir 25cm, un cena ir tāda paša"){
       				cenaPicLiel=0;
@@ -113,21 +118,56 @@ public class Picerija {
       			exIzv = (String)JOptionPane.showInputDialog(null,"Kādas peidevas jūs gribēsiet? Par piedevu jāmaksā 1 eiro!" ,
       					"Picas piedevu izvēle",JOptionPane.QUESTION_MESSAGE,null,extra,extra[6]);
       			}
-      			}while(exDz.length()==i);
-      			
-      			
-      			
+      			}while(exDz.length()>=i);
+      			int da;
+      			Integer.parseInt(exDz);
       			int cenaPicEx;
-      			cenaPicEx=1*exDz.length();
+      			cenaPicEx=exDz.length()*1;
       			
-      			JOptionPane.showMessageDialog(null, cenaPicEx);
-      			
-      			
+
       			
       			String[] daudzumss = {"1", "2", "3","4","5","6","7","8","9","10"};
       			String daudz;
       			daudz = (String)JOptionPane.showInputDialog(null,"Cik picas jūs gribēsiet?" ,
       					"Picas daudzuma izvēle",JOptionPane.QUESTION_MESSAGE,null,daudzumss,daudzumss[9]);
+      			
+      			int daz=0;
+      			
+      			if(daudz=="1"){
+      				daz=1;
+      			}else if(daudz=="2"){
+      				daz=2;
+      			}else if(daudz=="3"){
+      				daz=3;
+      			}else if(daudz=="4"){
+      				daz=4;
+      			
+      			}else if(daudz=="5"){
+      				daz=5;
+      			
+				}else if(daudz=="6"){
+					daz=6;
+				
+				}else if(daudz=="7"){
+					daz=7;
+				
+				}else if(daudz=="8"){
+					daz=8;
+				
+				}else if(daudz=="9"){
+					daz=9;
+				
+				}else if(daudz=="10"){
+					daz=10;
+				}
+      			
+      			
+      			
+      			
+      			cena = (cena+cenaPic+cenaPicLiel+cenaPicEx)*daz;
+      			cena = cena+10;
+      			
+      			JOptionPane.showMessageDialog(null,vards+" jums par piegādi un sūtījumu kopā ir jāmaksā "+cena);
       			
       			
       			
@@ -144,25 +184,102 @@ public class Picerija {
       					"Picas izvēle",JOptionPane.QUESTION_MESSAGE,null,picas,picas[4]);
       			
       			
+      			int cenaPic=0;
+      			
+      			if(picIzvele=="Siera picu"){
+      				cenaPic=4;
+      			}else if(picIzvele=="Veģitāro picu"){
+      				cenaPic=4;
+      			}else if(picIzvele=="Peperoni picu"){
+      				cenaPic=5;
+      			}else if(picIzvele=="Havaiešu picu"){
+      				cenaPic=5;
+      			}else if(picIzvele=="Šķinķa picu"){
+      				cenaPic=6;
+      			}
+      			
+      			
       			
       			String[] picuLiel = {"Mazā ir 25cm, un cena ir tāda paša", "Vidējā ir 35cm, bet cena pieaug pa 3 eiro gabalā",
-      					"Lielā ir 50cm, bet cena pieaug pa 5 eiro gabalā"};
+					"Lielā ir 50cm, bet cena pieaug pa 5 eiro gabalā"};
       			String picLIzvele;
       			picLIzvele = (String)JOptionPane.showInputDialog(null,"Cik liela būs jūsu pica?" ,
       					"Picas lieluma izvēle",JOptionPane.QUESTION_MESSAGE,null,picuLiel,picuLiel[2]);
       			
       			
+      			
+      			int cenaPicLiel=0;
+      			
+      			if(picLIzvele=="Mazā ir 25cm, un cena ir tāda paša"){
+      				cenaPicLiel=0;
+      			}else if(picLIzvele=="Vidējā ir 35cm, bet cena pieaug pa 3 eiro gabalā"){
+      				cenaPicLiel=3;
+      			}else if(picLIzvele=="Lielā ir 50cm, bet cena pieaug pa 5 eiro gabalā"){
+      				cenaPicLiel=5;
+      			}
+      			
+      			String exDz="";
+      			
+      			exDz = JOptionPane.showInputDialog(null,"Cik piedevas gribēsiet? Par katru ir jāmaksā 1 eiro!");
+      			Integer.parseInt(exDz);
+      			int i;
+      			do{
+      			for(i=0; exDz.length()>=i;i++){
       			String[] extra = {"Siers", "Gaļa", "Peperoni","Sīpoli","Mērce","Sēnes","Zaļumi"};
       			String exIzv;
       			exIzv = (String)JOptionPane.showInputDialog(null,"Kādas peidevas jūs gribēsiet? Par piedevu jāmaksā 1 eiro!" ,
       					"Picas piedevu izvēle",JOptionPane.QUESTION_MESSAGE,null,extra,extra[6]);
+      			}
+      			}while(exDz.length()>=i);
+      			int da;
+      			Integer.parseInt(exDz);
+      			int cenaPicEx;
+      			cenaPicEx=exDz.length()*1;
       			
-      			
+
       			
       			String[] daudzumss = {"1", "2", "3","4","5","6","7","8","9","10"};
       			String daudz;
       			daudz = (String)JOptionPane.showInputDialog(null,"Cik picas jūs gribēsiet?" ,
       					"Picas daudzuma izvēle",JOptionPane.QUESTION_MESSAGE,null,daudzumss,daudzumss[9]);
+      			
+      			int daz=0;
+      			
+      			if(daudz=="1"){
+      				daz=1;
+      			}else if(daudz=="2"){
+      				daz=2;
+      			}else if(daudz=="3"){
+      				daz=3;
+      			}else if(daudz=="4"){
+      				daz=4;
+      			
+      			}else if(daudz=="5"){
+      				daz=5;
+      			
+				}else if(daudz=="6"){
+					daz=6;
+				
+				}else if(daudz=="7"){
+					daz=7;
+				
+				}else if(daudz=="8"){
+					daz=8;
+				
+				}else if(daudz=="9"){
+					daz=9;
+				
+				}else if(daudz=="10"){
+					daz=10;
+				}
+      			
+      		
+      			
+      			
+      			cena = (cena+cenaPic+cenaPicLiel+cenaPicEx)*daz;
+      			
+      			
+      			JOptionPane.showMessageDialog(null,vards+" jums par ēdienu ir jāmaksā "+cena);
       				
       		
       		}
@@ -192,7 +309,7 @@ public class Picerija {
 						JOptionPane.showMessageDialog(null, "Vēl nav apreiķināts cik klientam būs jāmaksā!","Brīdinājums",JOptionPane.WARNING_MESSAGE);
 					}else{
 						
-						
+						JOptionPane.showMessageDialog(null, "Labdien "+vards+" šeit ir jūsu sūtijums! Jums ir jāmaksā "+cena+" eiro!");
 						
 				}
 					
@@ -204,6 +321,7 @@ public class Picerija {
 					
 				case"Apskatīties šodienas peļņu":
 				
+					pelna = pelna+cena;
 				JOptionPane.showMessageDialog(null, "Šodienas peļņa ir: "+pelna);
 				
 					break;
@@ -212,7 +330,7 @@ public class Picerija {
 				
 				
 				case"Beigt darbu":
-					
+					pelna = pelna+cena;
 					JOptionPane.showMessageDialog(null, "Šodeinai darbu beidzam, un šodein esat nopelnījuši "+pelna+" eiro", "Informācija",JOptionPane.INFORMATION_MESSAGE);
 					
 					break;

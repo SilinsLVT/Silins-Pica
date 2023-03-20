@@ -2,6 +2,7 @@ package picerija;
 
 import java.util.Arrays;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class Picerija {
@@ -13,6 +14,8 @@ public class Picerija {
 
 	public static void main(String[] args) {
 		
+		ImageIcon pica = new ImageIcon("C:\\Users\\SilinsL\\Desktop\\picina_600x400.png");
+	
 		
 		double pelna = 0,cena=0;
 		String vards="";
@@ -20,6 +23,7 @@ public class Picerija {
 		String adrese="";
 		String[] atbilde = {"Jā, es gribu piegādi uz savu adresi", "Nē, es atbraukšu pats pakaļ"};
 		int izveletaisIndekss = 1;
+		String vajag = "iela";
 		
 		
 		String[] opcijas = {"Sakt darbu","Apskatīt klienta informāciju",
@@ -28,12 +32,15 @@ public class Picerija {
 		
 		
 		do{
-		izvele = (String)JOptionPane.showInputDialog(null,"Izvelies darbibu" , "Darbibas izvele",JOptionPane.QUESTION_MESSAGE,null,opcijas,opcijas[4]);
+//			JOptionPane.showMessageDialog(null, pica);
+		izvele = (String)JOptionPane.showInputDialog(null,pica,"Izvelies darbibu" , JOptionPane.QUESTION_MESSAGE,null,opcijas,opcijas[4]);
 			
 		switch(izvele){
 			
 			
 		case"Sakt darbu":
+			
+			cena=0;
 				
 			JOptionPane.showMessageDialog(null, "Jums zvana klients", "Informācija",JOptionPane.INFORMATION_MESSAGE);
 				
@@ -56,13 +63,10 @@ public class Picerija {
       					"Pilsētas izvēle",JOptionPane.QUESTION_MESSAGE,null,pilsetas,pilsetas[2]);
       			
       			
-      				do{
+      				
       			adrese = JOptionPane.showInputDialog("Labi, kāda ir jūsu adrese?");
-      				}while(adrese.length()<=4);
-      				
-      				
-      			JOptionPane.showMessageDialog(null, "Tātad, veiksim piegādi uz "+pilIzvele+" "+adrese+"",
-      					"Informācija",JOptionPane.INFORMATION_MESSAGE);
+      				JOptionPane.showMessageDialog(null, "Tātad, veiksim piegādi uz "+pilIzvele+" "+adrese+"",
+          					"Informācija",JOptionPane.INFORMATION_MESSAGE);
       			
       			
       			String[] picas = {"Siera picu", "Veģitāro picu", "Peperoni picu","Havaiešu picu","Šķiņķa picu"};
@@ -179,8 +183,11 @@ public class Picerija {
       			
       			String[] picas = {"Siera picu", "Veģitāro picu", "Peperoni picu","Havaiešu picu","Šķiņķa picu"};
       			String picIzvele;
-      			picIzvele = (String)JOptionPane.showInputDialog(null,"Kādu picu jūs sūtīsiet?  Siera pica: no 4 e/gab, Veģitārā pica: no 4e/gab,"
-      					+ "Peperoni pica: no 5e/gab, Havaiešu pica: no 5e/gab, Šķiņķa pica: no 6e/gab",
+      			picIzvele = (String)JOptionPane.showInputDialog(null,"Kādu picu jūs sūtīsiet?  Siera pica: no 4 e/gab,"
+      					+ " Veģitārā pica: no 4e/gab,"
+      					+ "Peperoni pica: no 5e/gab,"
+      					+ " Havaiešu pica: no 5e/gab,"
+      					+ " Šķiņķa pica: no 6e/gab",
       					"Picas izvēle",JOptionPane.QUESTION_MESSAGE,null,picas,picas[4]);
       			
       			
@@ -200,8 +207,11 @@ public class Picerija {
       			
       			
       			
-      			String[] picuLiel = {"Mazā ir 25cm, un cena ir tāda paša", "Vidējā ir 35cm, bet cena pieaug pa 3 eiro gabalā",
-					"Lielā ir 50cm, bet cena pieaug pa 5 eiro gabalā"};
+      			String[] picuLiel = {"Mazā ir 25cm,"
+      					+ " un cena ir tāda paša", "Vidējā ir 35cm,"
+      							+ " bet cena pieaug pa 3 eiro gabalā",
+					"Lielā ir 50cm,"
+					+ " bet cena pieaug pa 5 eiro gabalā"};
       			String picLIzvele;
       			picLIzvele = (String)JOptionPane.showInputDialog(null,"Cik liela būs jūsu pica?" ,
       					"Picas lieluma izvēle",JOptionPane.QUESTION_MESSAGE,null,picuLiel,picuLiel[2]);
@@ -210,17 +220,21 @@ public class Picerija {
       			
       			int cenaPicLiel=0;
       			
-      			if(picLIzvele=="Mazā ir 25cm, un cena ir tāda paša"){
+      			if(picLIzvele=="Mazā ir 25cm,"
+      					+ " un cena ir tāda paša"){
       				cenaPicLiel=0;
-      			}else if(picLIzvele=="Vidējā ir 35cm, bet cena pieaug pa 3 eiro gabalā"){
+      			}else if(picLIzvele=="Vidējā ir 35cm,"
+      					+ " bet cena pieaug pa 3 eiro gabalā"){
       				cenaPicLiel=3;
-      			}else if(picLIzvele=="Lielā ir 50cm, bet cena pieaug pa 5 eiro gabalā"){
+      			}else if(picLIzvele=="Lielā ir 50cm,"
+      					+ " bet cena pieaug pa 5 eiro gabalā"){
       				cenaPicLiel=5;
       			}
       			
       			String exDz="";
       			
-      			exDz = JOptionPane.showInputDialog(null,"Cik piedevas gribēsiet? Par katru ir jāmaksā 1 eiro!");
+      			exDz = JOptionPane.showInputDialog(null,"Cik piedevas gribēsiet?"
+      					+ " Par katru ir jāmaksā 1 eiro!");
       			Integer.parseInt(exDz);
       			int i;
       			do{
@@ -295,7 +309,7 @@ public class Picerija {
 					if(vards.length()==0){
 						JOptionPane.showMessageDialog(null, "No sākuma ir jādabūn klients!");
 					}else{
-					JOptionPane.showMessageDialog(null, "\nKlienta vārds: "+vards+"\nKlienta telefona nummurs: "+telNr+"\nKlienta adrese: "+adrese+
+					JOptionPane.showMessageDialog(null, "\nKlienta vārds: "+vards+"\nKlienta telefona nummurs: +371"+telNr+"\nKlienta adrese: "+adrese+
 							"\nKlientam būs jāmaksā: "+cena);
 					}
 					break;
@@ -320,8 +334,8 @@ public class Picerija {
 					
 					
 				case"Apskatīties šodienas peļņu":
-				
 					pelna = pelna+cena;
+				
 				JOptionPane.showMessageDialog(null, "Šodienas peļņa ir: "+pelna);
 				
 					break;
@@ -330,8 +344,8 @@ public class Picerija {
 				
 				
 				case"Beigt darbu":
-					pelna = pelna+cena;
-					JOptionPane.showMessageDialog(null, "Šodeinai darbu beidzam, un šodein esat nopelnījuši "+pelna+" eiro", "Informācija",JOptionPane.INFORMATION_MESSAGE);
+					
+					JOptionPane.showMessageDialog(null, "Šodienai darbu beidzam, un šodein esat nopelnījuši "+pelna+" eiro", "Informācija",JOptionPane.INFORMATION_MESSAGE);
 					
 					break;
 			

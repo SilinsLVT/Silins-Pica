@@ -34,7 +34,7 @@ public class Picas_pircejs {
 	}
 	public String izvadit(){
 		 return "Vards: "+dabutvardu()
-		 +"\nTelefona nummurs: "+dabuttelNr()
+		 +"\nTelefona nummurs: +371 "+dabuttelNr()
 		 +"\nAdrese: "+dabutadresi();
 }
 }

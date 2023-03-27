@@ -7,6 +7,6 @@
 ## Kas man būtu jāpapildina, lai programma būtu labāka:
 
 - [x] Izveidot jaunu zaru, priekš uzlabojumu veikšanas
-- [ ] Izveidot objektus picai, un tās klientam
-- [ ] Izveidota metode datu izvadīšanai
+- [x] Izveidot objektus picai, un tās klientam
+- [x] Izveidota metode datu izvadīšanai
 - [ ] Uzglabāt failā informāciju

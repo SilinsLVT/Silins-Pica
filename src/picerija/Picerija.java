@@ -116,7 +116,7 @@ public class Picerija {
           				izmērs = "35cm";
           			}else if(picLIzvele=="Lielā ir 50cm, bet cena pieaug pa 5 eiro gabalā"){
           				izmērs = "50cm";
-      			}
+      			
       			
       			String exDz="";
       			
@@ -242,6 +242,8 @@ public class Picerija {
           			}else if(picLIzvele=="Lielā ir 50cm, bet cena pieaug pa 5 eiro gabalā"){
           				izmērs = "50cm";
       			}
+      			}
+      		
       			
       			String exDz="";
       			
@@ -313,8 +315,10 @@ public class Picerija {
 				break;
 			
 				
+      			}
       		}
-      		}
+		
+      		
 				
 				
 				
@@ -332,7 +336,7 @@ public class Picerija {
 					
 				case"Apskatīt klienta sūtījumu":
 					
-					sutijums(picIzvele,izmērs,daudz);
+					sutijums(picIzvele,izmērs,daudz,cena);
 					
 					break;
 				
@@ -379,8 +383,8 @@ public class Picerija {
 		
 	}
 
-	private static void sutijums(String picIzvele,String izmērs,String daudz) {
-		JOptionPane.showMessageDialog(null, "Kāda veida pica: "+picIzvele+"\n Cik liela pica: "+izmērs+" \n Cik daudz picas: "+daudz);
+	private static void sutijums(String picIzvele,String izmērs,String daudz, double cena) {
+		JOptionPane.showMessageDialog(null, "Kāda veida pica: "+picIzvele+"\n Cik liela pica: "+izmērs+" \n Cik daudz picas: "+daudz+" \n Cik daudz būs jāmaksā: "+cena);
 		
 	}
 

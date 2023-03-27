@@ -122,6 +122,7 @@ public class Picerija {
       			exIzv = (String)JOptionPane.showInputDialog(null,"Kādas peidevas jūs gribēsiet? Par piedevu jāmaksā 1 eiro!" ,
       					"Picas piedevu izvēle",JOptionPane.QUESTION_MESSAGE,null,extra,extra[6]);
       			}
+//      			}while(exDz.length()>=i);
       			}while(exDz.length()>=i);
       			int da;
       			Integer.parseInt(exDz);
@@ -174,7 +175,7 @@ public class Picerija {
       			JOptionPane.showMessageDialog(null,vards+" jums par piegādi un sūtījumu kopā ir jāmaksā "+cena);
       			
       			
-      			
+      			adrese = pilIzvele +""+ adrese;
       			
       			
       		}else{
@@ -309,7 +310,7 @@ public class Picerija {
 					if(vards.length()==0){
 						JOptionPane.showMessageDialog(null, "No sākuma ir jādabūn klients!");
 					}else{
-					JOptionPane.showMessageDialog(null, "\nKlienta vārds: "+vards+"\nKlienta telefona nummurs: +371"+telNr+"\nKlienta adrese: "+adrese+
+					JOptionPane.showMessageDialog(null, "\nKlienta vārds: "+vards+"\nKlienta telefona nummurs: +371 "+telNr+"\nKlienta adrese: "+adrese+
 							"\nKlientam būs jāmaksā: "+cena);
 					}
 					break;

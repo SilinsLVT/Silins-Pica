@@ -7,11 +7,6 @@ import javax.swing.JOptionPane;
 
 public class Picerija {
 	
-//	static double reiz(String exDz, int mult) {
-//	    double num = Double.parseDouble(exDz);
-//	    return num * mult;
-//	}
-
 	public static void main(String[] args) {
 		
 		ImageIcon pica = new ImageIcon("C:\\Users\\SilinsL\\Desktop\\picina_600x400.png");
@@ -307,12 +302,13 @@ public class Picerija {
 				
 				
 				case"Apskatīt klienta informāciju":
-					if(vards.length()==0){
-						JOptionPane.showMessageDialog(null, "No sākuma ir jādabūn klients!");
-					}else{
-					JOptionPane.showMessageDialog(null, "\nKlienta vārds: "+vards+"\nKlienta telefona nummurs: +371 "+telNr+"\nKlienta adrese: "+adrese+
-							"\nKlientam būs jāmaksā: "+cena);
-					}
+//					if(vards.length()==0){
+//						JOptionPane.showMessageDialog(null, "No sākuma ir jādabūn klients!");
+//					}else{
+//					JOptionPane.showMessageDialog(null, "\nKlienta vārds: "+vards+"\nKlienta telefona nummurs: +371 "+telNr+"\nKlienta adrese: "+adrese+
+//							"\nKlientam būs jāmaksā: "+cena);
+//					}
+					klients(vards, telNr, adrese);
 					break;
 				
 				
@@ -357,4 +353,10 @@ public class Picerija {
 		}while(!izvele.equalsIgnoreCase("Beigt darbu"));
 		
 	}
-}
+
+	private static String klients(String vards, String telNr, String adrese){
+			JOptionPane.showMessageDialog(null, "Klienta vārds: "+vards+"\n Klienta telefona nummurs: "+telNr+" \n Klienta adrese: "+ adrese);
+			return adrese;
+		}
+		
+	}
